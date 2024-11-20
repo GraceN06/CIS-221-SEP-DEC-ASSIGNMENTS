@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Email List</title>
+        <style>
+            .form-container{
+                max-width: 300px;
+                margin: 50px auto;
+                border: 1px solid #6d6868;
+                padding: 20px;
+                border-radius: 5px;
+            }
+            .error{
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="form-container">
+            <h2>Please join our email list</h2>
+            <form>
+                <label>Email Address:</label><br>
+                <input type="email" id="email" required><br><br>
+                <label>Re-enter Email Address:</label><br>
+                <input type="email" id="ConfirmEmail" required><br>
+                <span id="emailError" class="error"></span><br>
+                
+                <label>Fisr Name:</label><br>
+                <input type="text" id="firstName" required><br>
+                <span id="nameError" class="error"></span><br><br>
+                <button type="button" onclick="validateForm()">Join our List</button>
+            </form>
+        </div>
+
+        <script>
+            function validateForm(){
+                const email=document.getElementById('email').value;
+                const confirmEmail=document.getElementById('confirmEmail').value;
+                const firstName=document.getElementById('firstName').value;
+                const emailError=document.getElementById('emailError').value;
+                const nameError=document.getElementById('nameError').value;
+
+                emailError.textContent=";
+                nameError.textContent=";
+
+                if(email !==confirmEmail){
+                    emailError.textContent='This entry must be equal the first entry'
+                }
+                if(!firstName){
+                    nameError.textContent='This must be equal the first entry';
+                }
+            }
+        </script>
+    </body>
+</html>
