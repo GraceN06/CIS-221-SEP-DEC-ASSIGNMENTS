@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta https-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Product Discount Calculator</title>
+        <style>
+            body{
+                font-family: Arial,sans-serif;
+                margin:50px
+            }
+            .calculator{
+                border: 1px solid blue;
+                padding: 20px;
+                width: 300px;
+            }
+            .calculator input{
+                margin-bottom: 10px;
+                width: 100%;
+                padding: 5px;
+            }
+            .calculator button{
+                margin-top: 10px;
+                width: 48%;
+                padding: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="calculator">
+            <h2>Product Discount Calculator</h2>
+            <form>
+                <label for="description">Product description</label><br>
+                <input type="text" id="description" name="description"><br>
+                <label for="listPrice">List Price:</label><br>
+                <input type="text" id="listPrice" name="listPrice"><br>
+
+                <label for="discountAmount">Discounted amount:</label><br>
+                <input type="text" id="discountAmount" name="discountAmount" readonly><br>
+                <label for="discountedPrice">Discounted Price:</label><br>
+                <input type="text" id="DiscountedPrice" name="discountedPrice" readonly><br>
+                <button type="button" onclick="calculateDiscount()">Calculate</button>
+                <button type="reset">Reset</button>
+            </form>
+        </div>
+
+        <script>
+            function calculateDiscount(){
+                let listPrice=parseFloat(document.getElementById('listPrice').value);
+                let discountPercentage=parseFloat(document.getElementByid('discountPercentage').value);
+
+                if(!isNaN(listPrice)&&!isNaN(discountPercentage)){
+                    let discountamount=listPrice*(discountPercentage/100);
+                    let discountedPrice=listPrice-discountAmount;
+                    document.getElementByid('discountedPrice').value=discountedPrice.toFixed(2);
+                } else{
+                    alert("Please enter valid numeric values for list price and discount percentage.");
+                }
+            }
+        </script>
+    </body>
+</html>
