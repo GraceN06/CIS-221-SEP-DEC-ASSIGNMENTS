@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <tile>Calculate Perimeter</tile>
+        <style>
+            body{
+                font-family: Arial, sans-serif;
+            }
+            .container{
+                margin: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Calculate Perimeter</h1>
+            <p>Length:<input type="text" id="Length" value="2.33"></p>
+            <p>Width:<input type="text" id="width" value="4.44"></p>
+            <button> onclick="calculatePerimeter()">Calculate</button>
+            <p id="result">Perimeter:13.54</p>
+            <p>Thanks for using the Area Perimeter App!</p>
+        </div>
+
+        <script>
+            function calculatePerimeter(){
+                const length=parseFloat(document.getElementById('width').value);
+                const Perimeter=2 * (length+width);
+
+                document.getElementById('result').innerText='Perimeter:'+perimeter.toFixed(2);
+            }
+        </script>
+    </body>
+</html>
